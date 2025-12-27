@@ -2,7 +2,6 @@
 import { Input } from '@/components/ui/input'
 import {useState, useEffect} from 'react'
 import { useRouter } from 'next/navigation'
-import { set } from 'date-fns'
 
 export default function SearchBox() {
   const [searchKeyword, setSearchKeyword] = useState('')
