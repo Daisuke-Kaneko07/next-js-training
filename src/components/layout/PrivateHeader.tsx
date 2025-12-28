@@ -6,11 +6,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import Setting from './Setting';
-import {auth} from '@/auth';
+import { auth } from '@/auth';
 
 export default async function PrivateHeader() {
   const session = await auth();
-  if(!session?.user?.email) throw new Error('不正なリクエストです。'); 
+  if (!session?.user?.email) throw new Error('不正なリクエストです。');
 
   return (
     <header className="border-b bg-blue-200">
@@ -18,11 +18,11 @@ export default async function PrivateHeader() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/dashboard" passHref>
-                <NavigationMenuLink className="font-bold text-xl">
+              <NavigationMenuLink asChild>
+                <Link href="/dashboard" className="font-bold text-xl" passHref>
                   管理ページ
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
