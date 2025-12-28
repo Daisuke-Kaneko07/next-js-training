@@ -8,7 +8,7 @@ import "highlight.js/styles/github.css";
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { createPost } from '@/lib/actions/createPost';
+import { updatePost } from '@/lib/actions/updatePost';
 import Image from 'next/image';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
@@ -28,7 +28,7 @@ export default function EditPostForm({ post }: EditPostFormProps) {
   const [title, setTitle] = useState(post.title);
   const [published, setPublished] = useState(post.published);
   const [imagePreview, setImagePreview] = useState(post.topImage);
-  const [state, formAction] = useActionState(createPost, {
+  const [state, formAction] = useActionState(updatePost, {
     success: false, errors: {}
   });
 
