@@ -1,7 +1,6 @@
 import EditPostForm from "./EditPostForm"
 import { auth } from "@/auth"
 import { getOwnPost } from "@/lib/ownPost"
-import { Edit } from "lucide-react"
 import { notFound } from "next/navigation"
 
 type PageProps = { params: Promise<{id: string}> }

@@ -7,7 +7,6 @@ import {
 import Link from "next/link";
 import Setting from './Setting';
 import {auth} from '@/auth';
-import { th } from "date-fns/locale";
 
 export default async function PrivateHeader() {
   const session = await auth();
